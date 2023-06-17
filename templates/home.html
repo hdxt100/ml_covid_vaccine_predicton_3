@@ -1,0 +1,170 @@
+<html>
+<body>
+    <div class="login">
+       <h1>COVID-VACCINE Prediction</h1>
+   
+       <form action="{{ url_for('predict_datapoint') }}" method="POST">
+        <h1>
+            <legend>Patient's COVID-VACCINE Prediction Status</legend>
+        </h1>
+
+        <div class="form-group">
+            <label for="covid_worry">Covid Worry:</label>
+            <input type="number" id="covid_worry" name="covid_worry" placeholder="Enter your covid_worry">
+        </div>
+        <div class="form-group">
+            <label for="covid_awareness">Covid Awareness:</label>
+            <input type="number" id="covid_awareness" name="covid_awareness" placeholder="Enter your covid_awareness">
+        </div>
+        <div class="form-group">
+            <label for="antiviral_medication">Antiviral Medication:</label>
+            <input type="number" id="antiviral_medication" name="antiviral_medication" placeholder="Enter your antiviral_medication">
+        </div>
+        <div class="form-group">
+            <label for="contact_avoidance">Contact Avoidance:</label>
+            <input type="number" id="contact_avoidance" name="contact_avoidance" placeholder="Enter your contact_avoidance">
+        </div>
+        <div class="form-group">
+            <label for="bought_face_mask">bought_face_mask:</label>
+            <input type="number" id="bought_face_mask" name="bought_face_mask" placeholder="Enter your bought_face_mask">
+        </div>
+        <div class="form-group">
+            <label for="wash_hands_frequently">Wash hands frequently:</label>
+            <input type="number" id="wash_hands_frequently" name="wash_hands_frequently" placeholder="Enter your wash_hands_frequently">
+        </div>
+        <div class="form-group">
+            <label for="avoid_large_gatherings">Avoid large gatherings:</label>
+            <input type="number" id="avoid_large_gatherings" name="avoid_large_gatherings" placeholder="Enter your avoid_large_gatherings">
+        </div>
+        <div class="form-group">
+            <label for="reduced_outside_home_cont">Reduced outside home cont:</label>
+            <input type="number" id="reduced_outside_home_cont" name="reduced_outside_home_cont" placeholder="Enter your reduced_outside_home_cont">
+        </div>
+        <div class="form-group">
+            <label for="avoid_touch_face">Avoid touch face:</label>
+            <input type="number" id="avoid_touch_face" name="avoid_touch_face" placeholder="Enter your avoid_touch_face">
+        </div>
+        <div class="form-group">
+            <label for="chronic_medic_condition">Chronic medic condition:</label>
+            <input type="number" id="chronic_medic_condition" name="chronic_medic_condition" placeholder="Enter your chronic_medic_condition">
+        </div>
+        <div class="form-group">
+            <label for="cont_child_undr_6_mnths">Cont child undr 6 months:</label>
+            <input type="number" id="cont_child_undr_6_mnths" name="cont_child_undr_6_mnths" placeholder="Enter your cont_child_undr_6_mnths">
+        </div>
+        <div class="form-group">
+            <label for="is_health_worker">Is Health Worker:</label>
+            <input type="number" id="is_health_worker" name="is_health_worker" placeholder="Enter your is_health_worker">
+        </div>
+        <div class="form-group">
+            <label for="is_covid_vacc_effective">Is Covid Vaccine effective:</label>
+            <input type="number" id="is_covid_vacc_effective" name="is_covid_vacc_effective" placeholder="Enter your is_covid_vacc_effective">
+        </div>
+        <div class="form-group">
+            <label for="is_covid_risky">Is Covid risky:</label>
+            <input type="number" id="is_covid_risky" name="is_covid_risky" placeholder="Enter your is_covid_risky">
+        </div>
+        <div class="form-group">
+            <label for="sick_from_covid_vacc">Sick from covid vaccine:</label>
+            <input type="number" id="sick_from_covid_vacc" name="sick_from_covid_vacc" placeholder="Enter your sick_from_covid_vacc">
+        </div>
+        <div class="form-group">
+            <label for="is_seas_vacc_effective">Is Seas vaccine effective:</label>
+            <input type="number" id="is_seas_vacc_effective" name="is_seas_vacc_effective" placeholder="Enter your"is_seas_vacc_effective">
+        </div>
+        <div class="form-group">
+            <label for="is_seas_risky">Is Seas risky:</label>
+            <input type="number" id="is_seas_risky" name="is_seas_risky" placeholder="Enter your is_seas_risky">
+        </div>
+        <div class="form-group">
+            <label for="sick_from_seas_vacc">Sick from seas vaccine:</label>
+            <input type="number" id="sick_from_seas_vacc" name="sick_from_seas_vacc" placeholder="Enter your sick_from_seas_vacc">
+        </div>
+        <div class="form-group">
+            <label for="no_of_adults">No of adults:</label>
+            <input type="number" id="no_of_adults" name="no_of_adults" placeholder="Enter your no_of_adults">
+        </div>
+        <div class="form-group">
+            <label for="no_of_children">No of children:</label>
+            <input type="number" id="no_of_children" name="no_of_children" placeholder="Enter your no_of_children">
+        </div>
+
+        <div class="form-group">
+            <label for="age_bracket">Age Bracket:</label>
+            <select id="age_bracket" name="age_bracket">
+              <option value="55 - 64 Years">55 - 64 Years</option>
+              <option value="35 - 44 Years">35 - 44 Years</option>
+              <option value="18 - 34 Years">18 - 34 Years</option>
+              <option value="65+ Years">65+ Years</option>
+              <option value="45 - 54 Years">45 - 54 Years</option>
+            </select>
+          </div>
+        
+        <div class="form-group">
+            <label for="qualification">Qualification:</label>
+            <select id="qualification" name="qualification">
+              <option value="< 12 Years">< 12 Years</option>
+              <option value="12 Years">12 Years</option>
+              <option value="College Graduate">College Graduate</option>
+              <option value="Some College">Some College</option>
+              <option value="no_info">no_info</option>
+            </select>
+          </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <select id="address" name="address">
+              <option value="delhi">delhi</option>
+              <option value="Black">Black</option>
+              <option value="outside delhi">outside delhi</option>
+              <option value="not mentioned">not mentioned</option>
+            </select>
+          </div>
+
+        <div class="form-group">
+            <label for="sex">Sex:</label>
+            <select id="sex" name="sex">
+              <option value="Female">Female</option>
+              <option value="Male">Male</option>
+            </select>
+          </div>
+
+        <div class="form-group">
+            <label for="marital_status">Marital Status:</label>
+            <select id="marital_status" name="marital_status">
+              <option value="Not Married">Not Married</option>
+              <option value="Married">Married</option>
+              <option value="no_info">no_info</option>
+            </select>
+          </div>
+
+        <div class="form-group">
+            <label for="employment">Employment:</label>
+            <select id="employment" name="employment">
+              <option value="Not in Labor Force">Not in Labor Force</option>
+              <option value="Employed">Employed</option>
+              <option value="Unemployed">Unemployed</option>
+              <option value="no_info">no_info</option>
+            </select>
+          </div>
+
+        <div class="form-group">
+            <label for="status">Status:</label>
+            <select id="status" name="status">
+              <option value="untitled for umid">untitled for umid</option>
+              <option value="umid card holder">umid card holder</option>
+              <option value="umid card in-process">umid card in-process</option>
+            </select>
+          </div>
+
+        <div style="clear:both;"></div>
+            <input type="submit" value="Submit">
+    
+    </form>
+    </div>
+    <div>      
+    <h2>
+        Patient vaccinated with COVID-VACCINE ? 'YES - 1','NO - 0' is : {{ results }}
+    </h2>
+
+  </body>
+</html>

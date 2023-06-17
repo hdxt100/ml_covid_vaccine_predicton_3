@@ -46,13 +46,13 @@ class DataTransformation:
             
             num_pipeline = Pipeline([
             ('imputer', SimpleImputer(strategy='median')),
-            ('std_scaler', StandardScaler())
+            ('std_scaler', StandardScaler(with_mean=False))
             
             ])
             cat_pipeline = Pipeline([
             ('imputer', SimpleImputer(strategy='most_frequent')),
             ("one_hot_encoder",OneHotEncoder()),
-            ('std_scaler', StandardScaler())
+            ('std_scaler', StandardScaler(with_mean=False))
                   
             ])
             
@@ -81,13 +81,13 @@ class DataTransformation:
             train_df.drop_duplicates(inplace=True)
             test_df.drop_duplicates(inplace=True)
             
-            train_df['no_of_children'] = np.where(df['no_of_children']>2, 2, df['no_of_children'])
-            train_df['no_of_adults'] = np.where(df['no_of_adults'] > 2, 2, df['no_of_adults'])
-            train_df['is_seas_vacc_effective'] = np.where(df['is_seas_vacc_effective']>3,3, df['is_seas_vacc_effective'])
+            train_df['no_of_children'] = np.where(train_df['no_of_children']>2, 2, train_df['no_of_children'])
+            train_df['no_of_adults'] = np.where(train_df['no_of_adults'] > 2, 2, train_df['no_of_adults'])
+            train_df['is_seas_vacc_effective'] = np.where(train_df['is_seas_vacc_effective']>3,3, train_df['is_seas_vacc_effective'])
 
-            test_df['no_of_children'] = np.where(df['no_of_children']>2, 2, df['no_of_children'])
-            test_df['no_of_adults'] = np.where(df['no_of_adults'] > 2, 2, df['no_of_adults'])
-            test_df['is_seas_vacc_effective'] = np.where(df['is_seas_vacc_effective']>3,3, df['is_seas_vacc_effective'])
+            test_df['no_of_children'] = np.where(test_df['no_of_children']>2, 2, test_df['no_of_children'])
+            test_df['no_of_adults'] = np.where(test_df['no_of_adults'] > 2, 2, test_df['no_of_adults'])
+            test_df['is_seas_vacc_effective'] = np.where(test_df['is_seas_vacc_effective']>3,3, test_df['is_seas_vacc_effective'])
             
             logging.info("Read train and test data completed")
 

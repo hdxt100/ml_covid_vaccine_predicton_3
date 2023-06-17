@@ -10,7 +10,7 @@ from sklearn.model_selection import GridSearchCV
 
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
-from exception import CustomException
+from src.exception import CustomException
 
 def save_object(file_path, obj):
     try:
